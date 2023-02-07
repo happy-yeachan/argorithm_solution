@@ -1,14 +1,21 @@
-#랜선 자르기
-import math
+import sys
 
 k, n = map(int, input().split())
-li = []
-for i in range(0,k):
-    li.append(int(input()))
+arr = []
 
-max1 = math.gcd(*li)
-tmp = sum(li)/n
-tmp2 = sum(li)/(n+1)
+for i in range(k):
+    arr.append(int(input()))
 
+s = 1
+f = max(arr)
 
-print(max1, tmp, tmp2)
+while (s <= f):
+    mid = (s + f) // 2
+    cnt = 0
+    for i in range(k):
+        cnt += arr[i] // mid
+    if cnt >= n:
+        s = mid + 1
+    else:
+        f = mid - 1
+print(f)
