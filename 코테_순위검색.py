@@ -1,30 +1,26 @@
-# def solution(info, query):
-#     answer = []    
-#     for i in query:
-#         tmp = i.replace("and ", "")
-#         tmp = tmp.split()
-#         count = 0  
-#         for j in info:
-#             tmp2 = j.split()
-#             flag = True
-#             if int(tmp2[4]) < int(tmp[4]):
-#                 flag = False
-#             else:           
-#                 for idx in range(4):
-#                     if tmp[idx] == "-":
-#                         continue
-#                     else:
-#                         if tmp[idx] != tmp2[idx]:
-#                             flag = False
-#                             break
-#             if flag:
-#                 count += 1            
-#         answer.append(count)
-#     return answer
-
-
-
-
+def solution(info, query):
+    answer = []    
+    for i in query:
+        tmp = i.replace("and ", "")
+        tmp = tmp.split()
+        count = 0  
+        for j in info:
+            tmp2 = j.split()
+            flag = True
+            if int(tmp2[4]) < int(tmp[4]):
+                flag = False
+            else:           
+                for idx in range(4):
+                    if tmp[idx] == "-":
+                        continue
+                    else:
+                        if tmp[idx] != tmp2[idx]:
+                            flag = False
+                            break
+            if flag:
+                count += 1            
+        answer.append(count)
+    return answer
 
 
 
