@@ -8,7 +8,7 @@ for i in range(n):
     tmp = 5
     cnt = 0
     while tmp <= a:
-        cnt += a //tmp
+        cnt += a //tmp #5의 배수 25의 배수 개수 카운트
         tmp *= 5
     result.append(cnt)
 
