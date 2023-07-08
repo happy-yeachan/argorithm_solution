@@ -9,16 +9,14 @@ def solution(n, words):
             flag = True
             break # 이미 사용한 문자면 끝말잇기 종료
         else: tmp.append(words[i+1])
-        l = words[i][-1]
-        f = words[i+1][0]
-        if l != f: 
+        if words[i][-1] != words[i+1][0]: 
             flag = True
-            break #끝 말을 잇지 못한 경우
+            break #끝 말을 잇지 못한 경우 끝말잇기 종료
     # 탈락자 발생 시 result 구하기
     if flag == True:
-        a, b = divmod(i+2, n) # i+2: 몇번째 순서에 탈락
+        a, b = divmod(i+2, n) # i+2번째 순서에 탈락
         if b == 0: 
             return [n, a]
         else: 
             return [b, a+1]
-    return [0,0]
+    return [0,0] # 탈락자가 없으면 [0,0] 리턴
