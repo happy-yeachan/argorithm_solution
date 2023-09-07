@@ -1,6 +1,7 @@
 import sys
 input = sys.stdin.readline
 
+# 상하좌우 #으로 체우는 함수를 미리 만들어둠
 def c1(tmp, p):
     for i in range(p[1], m):
         if tmp[p[0]][i] == 6:
@@ -33,6 +34,7 @@ def c4(tmp, p):
             tmp[i][p[1]] = '#'
     return tmp
 
+# 각 카메라별 어떤 경우 사용할지 하는지 따로 저장한다.
 def back(cnt):
     global result
     if cnt == len(cam):
@@ -65,6 +67,7 @@ def back(cnt):
         back(cnt+1)
         case.pop()
 
+# 카메라가 사용할 경우를 따져 감시를 한다고 가정하고 사각지대 탐색
 def overlook(tmp_li):
     cnt = 0
     for i in range(len(case)):
