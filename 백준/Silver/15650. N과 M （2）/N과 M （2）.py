@@ -16,11 +16,6 @@ def back(cnt):
 
 
 n, m = list(map(int, input().split()))
-if m == 1:
-    for i in range(n):
-        print(i+1, end=" ")
-    exit()
 
 road = []
-check = [False]*n
 back(0)
