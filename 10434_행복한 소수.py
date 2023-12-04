@@ -8,7 +8,7 @@ def is_prime_number(x): # 소수 판별
         # x가 해당 수로 나누어떨어진다면
         if x % i == 0:
             return False # 소수가 아님
-    return True # 소수임
+    return True # 소수
     
 
 
