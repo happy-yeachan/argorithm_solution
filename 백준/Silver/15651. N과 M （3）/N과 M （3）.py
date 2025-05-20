@@ -1,19 +1,18 @@
 import sys
+
 input = sys.stdin.readline
 
 def back():
-    if len(road) == m:
-        for i in road:
-            print(i, end=" ")
-        print()
+    if len(check) == m:
+        print(*check)
         return
-    for i in range(n):
-        road.append(i+1)
+    for i in range(1, n+1):
+        check.append(i)
         back()
-        road.pop()
+        check.pop()
 
 n, m = list(map(int, input().split()))
 
-road = []
+check=[]
 
 back()
